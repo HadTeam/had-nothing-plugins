@@ -37,7 +37,7 @@ class MqttComponent {
             });
             global.plugins.mqttClient.publish("panel/component/" + uuid, req);
             try {
-                await pTimeout(waitFor(eventName, global.events), 1000);
+                await pTimeout(waitFor(eventName, global.events), 2000);
             } catch (err) {
                 console.warn("[MqttComponent]Request" + JSON.stringify({id: reqId, action: action}) + " timeout.");
             }
